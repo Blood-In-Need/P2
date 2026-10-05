@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Donation Certificate Generator</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="mitra.css" />
+</head>
+
+<body>
+    <!-- Full Page Loader -->
+    <div id="pageLoader" class="page-loader" style="display: none;">
+        <div class="loader-box">
+            <div class="loader-spinner"></div>
+            <p id="loaderText">Processing...</p>
+        </div>
+    </div>
+
+    <!-- MAIN APP PAGE -->
+    <div class="app-container">
+        <div class="form-container">
+            <div class="header">
+                <h2>वसुंधरा मित्र</h2>
+                <div class="header-actions">
+                    <!--<div class="language-switch">
+                        <div class="slider"></div>
+
+                        <button type="button" class="lang-option active" data-lang="Sevak">
+                            Sevak
+                        </button>
+
+                        <button type="button" class="lang-option" data-lang="hindi">
+                            Hindi
+                        </button>
+                    </div>-->
+                    <button id="logoutBtn" type="button">
+                        <span class="btn-text">Logout</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="photo-input">Upload Photo *</label>
+                <input type="file" id="photo-input" accept="image/*" required>
+            </div>
+
+            <div class="input-group">
+                <label for="donor-name">Name *</label>
+                <input type="text" id="donor-name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="location">Taluka *</label>
+                <input type="text" id="location" required>
+            </div>
+            <div class="input-group">
+                <label for="location1">Jilha *</label>
+                <input type="text" id="location1" required>
+            </div>
+
+            <!--<div class="input-group">
+                <label for="donor-count">Raktadate *</label>
+                <input type="text" id="donor-count" inputmode="numeric" maxlength="4" required>
+            </div> -->
+
+            <button class="generate-btn" id="generateBtn">
+                <span class="btn-text">Generate Certificate</span>
+            </button>
+        </div>
+
+        <!-- Crop Modal -->
+        <div class="crop-modal" id="cropModal">
+            <div class="crop-box">
+                <img id="crop-image" alt="Crop preview">
+                <div class="crop-controls">
+                    <button id="saveCropBtn" class="btn-green" type="button">OK</button>
+                    <button id="cancelCropBtn" class="btn-red" type="button">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden certificate area -->
+        <div id="certificate-container">
+            <div class="certificate-overlay"></div>
+            <img id="donor-photo" class="donor-photo" alt="Donor Photo">
+
+            <div class="certificate-content">
+                <h1 id="cert-name"></h1>
+                <div class="data">
+                    <div class="icon-text">
+                        <span id="cert-location"></span>
+                    </div>
+                    <div class="icon-text1">
+                        <span id="cert-location1"></span>
+                    </div>
+                </div>
+                <!-- NEW MARATHI TEXT BLOCK
+                <div class="certificate-message" id="certificate-message"></div>  -->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="mitra.js"></script>
+</body>
+
+</html>
